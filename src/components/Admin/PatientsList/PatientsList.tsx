@@ -1,9 +1,9 @@
-const PatientsList = () => {
+const PatientList = () => {
     return(
         <div>
-        welcome to PatientsList
+        welcome to PatientList
     </div>
     )
 };
 
-export default PatientsList;
+export default PatientList;

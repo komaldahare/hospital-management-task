@@ -2,11 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import MainComponent from "../MainComponent/MainComponent";
 import Dashboard from "../components/Admin/Dashboard/Dashboard";
 import DoctorsList from "../components/Admin/DoctorsList/DoctorsList";
-import PatientsList from "../components/Admin/PatientsList/PatientsList";
+import PatientList from "../components/Admin/PatientsList/PatientsList";
 import Login from "../components/Auth/Login"
 import Profile from "../components/Patient/Profile/Profile";
 import MyAppointment from "../components/Patient/MyAppointment/MyAppointment";
 import BookAppointment from "../components/Patient/BookAppointment/BookAppointment";
+import DoctorProfile from "../components/Doctor/Profile/DoctorProfile";
+import DoctorAppointment from "../components/Doctor/MyAppointment/DoctorAppointment";
+import SetAppointment from "../components/Doctor/SetAppointment/SetAppointment";
 
 const mainRouter = createBrowserRouter([
     {
@@ -27,7 +30,7 @@ const mainRouter = createBrowserRouter([
         },
         {
           path: "/admin/patient",
-          element: <PatientsList />,
+          element: <PatientList />,
         },
       ],
     },
@@ -49,6 +52,26 @@ const mainRouter = createBrowserRouter([
         },
       ],
     },
+
+    {
+      path: "/doctor",
+      element: <MainComponent />,
+      children: [
+        {
+          path: "/doctor",
+          element: <DoctorProfile />,
+        },
+        {
+          path: "/doctor/myappointment",
+          element: <DoctorAppointment />,
+        },
+        {
+          path: "/doctor/setAppointment",
+          element: <SetAppointment />,
+        },
+      ],
+    },
+
   ]);
 
   export default mainRouter;

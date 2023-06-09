@@ -1,11 +1,11 @@
-const DoctorsList = () => {
+const DoctorList = () => {
     return (
         <div>
-        welcome to DoctorsList
+        welcome to DoctorList
     </div>
     )
 };
 
-export default DoctorsList;
+export default DoctorList;
 
 

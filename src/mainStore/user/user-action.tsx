@@ -21,7 +21,16 @@ export const loginUser = (userDetails: any, navigate:any) => {
 
           console.log('userData', userData)
             dispatch(saveUser({userData}))
-            navigate('/admin')
+            if(userData.type === "user"){
+              navigate('/user')
+            }else if(userData.type === 'doctor') {
+              navigate('/doctor')
+            }else if(userData.type === 'admin') {
+              navigate('/admin')
+            }else{
+              navigate('/')
+            }
+        
         }else {
            console.log('res err', msg)
         }

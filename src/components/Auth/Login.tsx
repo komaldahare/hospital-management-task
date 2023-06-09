@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
        const userInfo = {
         email,
         password
-       }
+       };
        dispatch(
         loginUser(userInfo,navigate)
       );
@@ -46,6 +46,7 @@ import { useNavigate } from 'react-router-dom';
                 placeholder="Enter your email"
                 value={email}
                 onChange={handleEmailChange}
+                required
               />
             </div>
             <div className="mb-6">
@@ -59,6 +60,7 @@ import { useNavigate } from 'react-router-dom';
                 placeholder="Enter your password"
                 value={password}
                 onChange={handlePasswordChange}
+                required
               />
             </div>
             <div className="flex items-center justify-between">
